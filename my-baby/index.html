@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meharaj ❤️ Zinat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+color:white;
+}
+
+/* MOVIE INTRO */
+
+.intro{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+position:relative;
+overflow:hidden;
+}
+
+.intro h1{
+font-family:'Cinzel',serif;
+font-size:5rem;
+color:#ffd700;
+text-shadow:0 0 20px gold;
+animation:glow 2s infinite alternate;
+}
+
+.intro p{
+margin-top:20px;
+font-size:1.2rem;
+letter-spacing:4px;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px gold;}
+to{ text-shadow:0 0 40px gold;}
+}
+
+/* Floating Hearts */
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+}
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('photo1.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+backdrop-filter:blur(8px);
+padding:40px;
+border:1px solid gold;
+border-radius:20px;
+background:rgba(0,0,0,.4);
+}
+
+.hero h2{
+font-size:4rem;
+color:gold;
+font-family:'Cinzel';
+}
+
+.hero h3{
+font-size:1.5rem;
+margin-top:10px;
+}
+
+/* Countdown */
+
+.countdown{
+padding:100px 20px;
+text-align:center;
+background:#050505;
+}
+
+.countdown h2{
+font-size:3rem;
+color:gold;
+margin-bottom:30px;
+}
+
+.timer{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.box{
+background:#111;
+padding:25px;
+border-radius:15px;
+border:1px solid gold;
+min-width:120px;
+}
+
+.box span{
+font-size:2.5rem;
+color:gold;
+display:block;
+}
+
+/* Slideshow */
+
+.slideshow{
+padding:100px 20px;
+text-align:center;
+}
+
+.slideshow h2{
+color:gold;
+margin-bottom:40px;
+font-size:3rem;
+}
+
+.slider{
+width:80%;
+max-width:500px;
+height:900px;
+margin:auto;
+overflow:hidden;
+border-radius:20px;
+border:3px solid gold;
+box-shadow:0 0 30px rgba(255,215,0,.5);
+}
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* Love Story */
+
+.story{
+padding:100px 10%;
+background:#050505;
+}
+
+.story h2{
+text-align:center;
+color:gold;
+font-size:3rem;
+margin-bottom:40px;
+}
+
+.story p{
+font-size:1.2rem;
+line-height:2;
+text-align:center;
+}
+
+/* Secret Buttons */
+
+.secret{
+padding:100px 20px;
+text-align:center;
+}
+
+.secret h2{
+color:gold;
+margin-bottom:30px;
+}
+
+.btn{
+padding:15px 30px;
+margin:10px;
+border:none;
+background:gold;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border-radius:50px;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* Modal */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+text-align:center;
+max-width:600px;
+padding:30px;
+}
+
+.modal-content h2{
+color:gold;
+margin-bottom:20px;
+}
+
+/* Footer */
+
+footer{
+padding:50px;
+text-align:center;
+background:black;
+color:gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="our-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts"></div>
+
+<section class="intro">
+<h1>MEHARAJ ❤️ ZINAT</h1>
+<p>A LOVE STORY WRITTEN BY DESTINY</p>
+</section>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Forever & Always</h2>
+<h3>21 October 2020 — Infinite Memories</h3>
+</div>
+</section>
+
+<section class="countdown">
+<h2>Time Since We Fell In Love ❤️</h2>
+
+<div class="timer">
+<div class="box">
+<span id="days">0</span>
+Days
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+Hours
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+Seconds
+</div>
+</div>
+</section>
+
+<section class="slideshow">
+<h2>Our Beautiful Journey</h2>
+
+<div class="slider">
+<img id="slide" src="photo1.jpg">
+</div>
+</section>
+
+<section class="story">
+
+<h2>Our Love Story</h2>
+
+<p>
+
+On 21 October 2020, two hearts began a journey that would
+change everything.
+
+Meharaj found his forever person in Zinat,
+and together they created countless memories,
+shared endless smiles,
+and built a love stronger than time itself.
+
+Every sunrise became brighter,
+every dream became more meaningful,
+because it was shared together.
+
+This story isn't just about love.
+
+It's about friendship,
+trust,
+loyalty,
+and choosing each other every single day.
+
+And this beautiful movie continues forever...
+
+❤️
+
+</p>
+
+</section>
+
+<section class="secret">
+
+<h2>Secret Love Vault 🔐</h2>
+
+<button class="btn" onclick="showMessage(1)">Secret #1</button>
+<button class="btn" onclick="showMessage(2)">Secret #2</button>
+<button class="btn" onclick="showMessage(3)">Secret #3</button>
+<button class="btn" onclick="showMessage(4)">Secret #4</button>
+
+</section>
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h2 id="secretTitle"></h2>
+
+<p id="secretText"></p>
+
+<br>
+
+<button class="btn"
+onclick="closeModal()">Close</button>
+
+</div>
+
+</div>
+
+<footer>
+
+Made With ❤️ By Meharaj For Zinat
+
+</footer>
+
+<script>
+
+/* Countdown */
+
+const startDate =
+new Date("2020-10-21T00:00:00");
+
+function updateTimer(){
+
+const now=new Date();
+
+const diff=now-startDate;
+
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff/(1000*60*60))%24);
+const minutes=Math.floor((diff/(1000*60))%60);
+const seconds=Math.floor((diff/1000)%60);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+/* Slideshow */
+
+const photos=[
+"1000018095.jpg",
+"1000018143.jpg",
+"1000018159.jpg",
+"1000029835 (1).jpg",
+"1000039144.jpg"
+];
+
+let current=0;
+
+setInterval(()=>{
+
+current++;
+
+if(current>=photos.length)
+current=0;
+
+document.getElementById("slide").src=
+photos[current];
+
+},3500);
+
+/* Floating Hearts */
+
+const hearts=
+document.querySelector(".hearts");
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+Math.random()*25+15+"px";
+
+heart.style.animationDuration=
+Math.random()*4+4+"s";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+},300);
+
+/* Secret Messages */
+
+function showMessage(num){
+
+const title=
+document.getElementById("secretTitle");
+
+const text=
+document.getElementById("secretText");
+
+const modal=
+document.getElementById("modal");
+
+if(num==1){
+title.innerHTML="Our First Destiny ❤️";
+text.innerHTML="The day our hearts met, destiny started writing our story.";
+}
+
+if(num==2){
+title.innerHTML="My Promise 💍";
+text.innerHTML="No matter where life takes us, I choose you every day.";
+}
+
+if(num==3){
+title.innerHTML="Hidden Message 🌹";
+text.innerHTML="You are my favorite chapter, my favorite memory, my favorite forever.";
+}
+
+if(num==4){
+title.innerHTML="Forever Secret ❤️";
+text.innerHTML="If I had another life, I would still find you and love you again.";
+}
+
+modal.style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
